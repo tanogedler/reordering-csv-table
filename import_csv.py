@@ -3,7 +3,7 @@ import xlrd
 
 # We import the file where the categories are
 # we save the excel in the xcl variable to refer to when we go to access the sheets
-xcl = xlrd.open_workbook('./categories.xlsx') 
+xcl = xlrd.open_workbook('./originalData/categories.xlsx') 
 
 # We keep each Excel sheet by categories
 # In category i is the sheet xcl.sheet_by_index (i) 
@@ -79,7 +79,7 @@ Array4Category3=[Array4Category3tmp[i][1:12] for i in range(0,len(Array4Category
 # Now we take the other file, the csv where the data is
 
 
-with open ('./data.csv','r') as csv_file:
+with open ('./originalData/data.csv','r') as csv_file:
     dialect = csv.Sniffer().sniff(csv_file.read())
     csv_file.seek(0)
     reader = csv.reader(csv_file, dialect)
